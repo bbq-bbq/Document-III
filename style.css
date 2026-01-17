@@ -113,3 +113,17 @@ select, input[type="number"] {
     border-radius: 4px;
 }
 
+#mobile-submit {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    background: #2196F3; /* Bright blue so it stands out */
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+}
+
+/* Hide the button on large screens/desktops if you want */
+@media (min-width: 600px) {
+    #mobile-submit { display: none; }
+}

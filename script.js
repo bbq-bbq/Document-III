@@ -142,16 +142,4 @@ function showResults() {
     showView('results-view');
 }
 
-// This replaces your previous 'keyup' listener
-document.getElementById('answer-input').addEventListener('input', (e) => {
-    const userVal = e.target.value;
-    const currentCorrectAnswer = currentQuestions[currentIdx].a.toString();
 
-    // If the length of what you typed matches the length of the answer
-    if (userVal.length === currentCorrectAnswer.length) {
-        // Wait a tiny fraction of a second so the user can see the number they typed
-        setTimeout(() => {
-            checkAnswer(false);
-        }, 100); 
-    }
-});
