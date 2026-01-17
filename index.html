@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Math Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <div id="app">
+        <section id="menu-view">
+            <h1>Mental Math</h1>
+            <div class="grid">
+                <button onclick="showSubcats('Addition')">Addition</button>
+                <button onclick="showSubcats('Subtraction')">Subtraction</button>
+                <button onclick="showSubcats('Multiplication')">Multiplication</button>
+                <button onclick="showSubcats('Division')">Division</button>
+            </div>
+        </section>
+
+        <section id="subcat-view" class="hidden">
+            <button class="back-btn" onclick="showView('menu-view')">← Back</button>
+            <h2 id="current-category">Category</h2>
+            <div id="subcat-buttons" class="grid"></div>
+        </section>
+
+        <section id="settings-view" class="hidden">
+            <button class="back-btn" onclick="showView('subcat-view')">← Back</button>
+            <h2>Settings</h2>
+            <label>Mode: 
+                <select id="mode-select">
+                    <option value="visual">Visual Only</option>
+                    <option value="spoken">Spoken Only</option>
+                    <option value="both">Both</option>
+                </select>
+            </label>
+            <label>Timer (seconds): 
+                <input type="number" id="timer-input" value="3" min="1">
+            </label>
+            <button class="start-btn" onclick="startGame()">Start Game</button>
+        </section>
+
+        <section id="game-view" class="hidden">
+            <div id="timer-bar"></div>
+            <div id="question-display">---</div>
+            <input type="number" id="answer-input" pattern="\d*" novalidate>
+            <div id="feedback"></div>
+        </section>
+
+        <section id="results-view" class="hidden">
+            <h2>Done!</h2>
+            <p id="score-display"></p>
+            <button onclick="showView('menu-view')">Home</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
